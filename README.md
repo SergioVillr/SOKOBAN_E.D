@@ -42,3 +42,6 @@ MAPAS
 
 
 [![Juego-Controls2.png](https://i.postimg.cc/YCT6mc5B/Juego-Controls2.png)](https://postimg.cc/QFk9RzNf)
+
+
+[![Juego-Controls3.png](https://i.postimg.cc/Qxw9fQ0p/Juego-Controls3.png)](https://postimg.cc/HV0kxyGx)
