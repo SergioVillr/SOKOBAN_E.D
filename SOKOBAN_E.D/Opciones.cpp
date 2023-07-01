@@ -9,6 +9,10 @@ Opciones::~Opciones()
 
 Opciones::Opciones(int ancho, int alto, string titu)
 {
+
+	buffer.loadFromFile("resource/click.wav");
+	click.setBuffer(buffer);
+
 	vectorBotones = new Text[maximo];
 	menuOpciones = new RenderWindow(VideoMode(ancho, alto),titu);
 	texturaFondo = new Texture;
@@ -89,6 +93,7 @@ void Opciones::ejecutar()
 
 		if (evento->key.code == Keyboard::Escape)// tecla presionada fue la tecla "ENTER"
 		{
+			click.play();
 			Menu* devolver;
 			menuOpciones->close();
 			devolver = new Menu(960, 540, "SOKOBAN");
@@ -96,6 +101,7 @@ void Opciones::ejecutar()
 
 		if (evento->type == Event::Closed)
 		{
+			click.play();
 			menuOpciones->close();
 			exit(1);
 		}
@@ -103,11 +109,13 @@ void Opciones::ejecutar()
 		{
 			if (evento->key.code == Keyboard::Up)
 			{
+				click.play();
 				moverArriba();
 				break;
 			}
 			if (evento->key.code == Keyboard::Down)
 			{
+				click.play();
 				moverAbajo();
 				break;
 			}

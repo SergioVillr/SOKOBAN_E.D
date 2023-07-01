@@ -7,6 +7,10 @@ Niveles::~Niveles() {
 
 Niveles::Niveles(int ancho, int alto, string titu)
 {
+
+	buffer.loadFromFile("resource/click.wav");
+	click.setBuffer(buffer);
+
 	pantallaNiveles = new RenderWindow(VideoMode(ancho, alto), titu);
 	
 	textureBackground = new Texture();
@@ -86,6 +90,7 @@ void Niveles::ejecutarBotones() {
 	{
 		if (evento->type == Event::Closed)
 		{
+			click.play();
 			pantallaNiveles->close();
 			exit(1);
 		}
@@ -93,22 +98,26 @@ void Niveles::ejecutarBotones() {
 		{
 			if (evento->key.code == Keyboard::Escape)
 			{
+				click.play();
 				Menu* atras;
 				pantallaNiveles->close();
 				atras = new Menu(960, 540, "SOKOBAN");
 			}
 			if (evento->key.code == Keyboard::Up)
 			{
+				click.play();
 				moveArriba();
 				break;
 			}
 			if (evento->key.code == Keyboard::Down)
 			{
+				click.play();
 				moveAbajo();
 				break;
 			}
 			if (evento->key.code == Keyboard::Return)// tecla presionada fue la tecla "ENTER"
 			{
+				click.play();
 				int x = NivelPressed();
 				if (x == 0)//nivel 1
 				{

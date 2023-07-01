@@ -1,11 +1,11 @@
 #pragma once
 #include "SFML/Graphics.hpp"
+#include "SFML/Audio.hpp"
 #include <iostream>
 #include "Opciones.h"
 #include "pantallaAcercaDe.h"
 
 #include "Niveles.h"
-
 
 using namespace sf;
 using namespace std;
@@ -30,8 +30,9 @@ class Menu{
 
 		Niveles* niveles;
 		Juego* game;
-	
 
+		SoundBuffer buffer;
+		Sound click;
 	public:
 		Menu(int ancho, int alto, string titulo);
 		~Menu();
@@ -45,7 +46,4 @@ class Menu{
 		{
 			return MenuSeleccionado;
 	    }
-
-	
-	
 };

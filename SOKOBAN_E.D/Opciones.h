@@ -1,5 +1,6 @@
 #pragma once
 #include "SFML/Graphics.hpp"
+#include "SFML/Audio.hpp"
 #include <iostream>
 #define maximo 3//define la dimension del vector contenenedor de los botones del menu de opciones
 #define celeste 63,191,191
@@ -19,7 +20,9 @@ private:
 	Font* fuente;
 	Text* label;
 	Text* vectorBotones;
-	
+
+	SoundBuffer buffer;
+	Sound click;
 public:
 	Opciones(int ancho, int alto, string titu);
 	void gameloop();

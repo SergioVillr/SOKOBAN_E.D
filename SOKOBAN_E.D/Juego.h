@@ -1,7 +1,18 @@
 #pragma once
 #include "SFML/Graphics.hpp"
 #include <iostream>
+#include <fstream>
+#include <stdio.h>
+#include <string.h>
+#include <cstdio>
+#include <sstream>
 #include "ListaOrtogonal.h"
+#include <vector>
+#include <time.h>
+#include <cstdlib>
+#include <string>
+#include <stack>
+
 
 
 using namespace sf;
@@ -13,6 +24,7 @@ class Juego
 		RenderWindow* pantallaJuego;
 	
 		Nodo* head;
+		Nodo* head2;
 		ListaOrtogonal* obj;
 
 		Texture* texturaFondo;
@@ -30,26 +42,37 @@ class Juego
 		Texture* Tpersonaje;
 		Sprite* Spersonaje;
 
+		string Nivel;
+
 		int partidaG;
+
+		vector<char> repeticion;
+		stack<char>pila;
 
 	public:
 		Juego(int ancho, int alto, string titu, string nivel);
-		Juego(int ancho, int alto, string titu,int Pguardada);
 		void gameloop(string nivel);
-		void dibujar();
 		void ejecutar();
 
 		void crearGrid(string nivel);
+		void crearGridCopia(string nivel);
 		void actualizaMapa(char caracter, float x, float y, Texture* Tmuros, Sprite* Smuro);
 		void cargaMapa(Nodo* head);
 		void cargaBaseMapa(char caracter, float x, float y, Texture* Tmuros, Sprite* Smuro);
 
-		void MoverArriba();
-		void moverAbajo();
-		void moverDerecha();
-		void moverIzquierda();
+		void MoverArriba(int num);
+		void moverAbajo(int num);
+		void moverDerecha(int num);
+		void moverIzquierda(int num);
 
 		void Guardar();
+
+		void moverRep(int num);
+		void borrarRep();
+		void verRepeticion();
+		vector<char> rep();
+
+		void verPila();
 
 		~Juego();
 

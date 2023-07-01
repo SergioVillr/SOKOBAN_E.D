@@ -8,6 +8,9 @@ Menu::~Menu()
 
 Menu::Menu(int ancho, int alto, string titulo)
 {
+	buffer.loadFromFile("resource/click.wav");
+	click.setBuffer(buffer);
+
 	fps = 60;
 	menuPrincipal = new RenderWindow(VideoMode(ancho, alto), titulo);//creamos la pantalla del menu principal
 	menuPrincipal->setFramerateLimit(fps);//se limita los fps a la pantalla
@@ -50,7 +53,6 @@ Menu::Menu(int ancho, int alto, string titulo)
 	vectorBotones[3].setFillColor(Color::White);
 	vectorBotones[3].setPosition(300, 250);
 	vectorBotones[3].setCharacterSize(40);
-
 	//Boton de salir
 	vectorBotones[4].setFont(*fuente);
 	vectorBotones[4].setString("Salir");
@@ -97,16 +99,19 @@ void Menu::ejecutarEventos()
 		{
 			if (evento->key.code == Keyboard::Up)
 			{
+				click.play();
 				MoverArriba();
 				break;
 			}
 			if (evento->key.code == Keyboard::Down)
 			{
+				click.play();
 				Moverabajo();
 				break;
 			}
 			if (evento->key.code == Keyboard::Return)// tecla presionada fue la tecla "ENTER"
 			{
+				click.play();
 				int x = MenuPressed();
 				if (x == 0)//ingresa a la pantalla de juego
 				{

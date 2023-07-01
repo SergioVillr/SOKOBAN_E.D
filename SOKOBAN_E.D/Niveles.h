@@ -2,6 +2,7 @@
 #include "SFML/Graphics.hpp"
 #include <iostream>
 #include "Juego.h"
+#include "SFML/Audio.hpp"
 
 using namespace sf;
 using namespace std;
@@ -21,6 +22,8 @@ class Niveles{
 
 		Juego* game;
 
+		SoundBuffer buffer;
+		Sound click;
 
 	public:
 		Niveles(int ancho, int alto, string titu);

@@ -22,7 +22,6 @@ void ListaOrtogonal::cargarLista(int n, int m, Nodo*& head)
 					head = p;
 				}
 				q = p;
-				//j+=1;
 			}
 			else
 			{
@@ -49,7 +48,6 @@ void ListaOrtogonal::cargarLista(int n, int m, Nodo*& head)
 			r = r->getAbajo();
 	}
 }
-
 
 void ListaOrtogonal::desplegar(Nodo* head)
 {
@@ -78,17 +76,22 @@ void ListaOrtogonal::cargarNivel(string lvlName)
 	FILE* archivo;
     char caracter;
     int i = 0;
-
-	string direccion = "Mapas/Nivel" + lvlName + ".txt";
-
-
-    archivo = fopen(direccion.c_str(), "r");
+	string direccion;
+	if (lvlName == '6')
+	{
+		string direccion = "Guardar/Guardar.txt";
+		archivo = fopen(direccion.c_str(), "r");
+	}
+	else
+	{
+		string direccion = "Mapas/Nivel" + lvlName + ".txt";
+		archivo = fopen(direccion.c_str(), "r");
+	}
 
     if (archivo == NULL) {
         printf("\nError de apertura del archivo. \n\n");
     }
     else {
-        printf("\nEl contenido del archivo de prueba es \n\n");
         while (feof(archivo) == 0) {
             caracter = fgetc(archivo);
             if (caracter != EOF)
@@ -107,6 +110,13 @@ void ListaOrtogonal::cargarNivel(string lvlName)
 
 }
 
+void ListaOrtogonal::cargarVec()
+{
+	for (int i = 0;i < 16;i++) {
+		cout << vec[i];
+	}
+}
+
 void ListaOrtogonal::cargarNivelGuardado()
 {
 	FILE* archivo;
@@ -122,7 +132,6 @@ void ListaOrtogonal::cargarNivelGuardado()
 		printf("\nError de apertura del archivo. \n\n");
 	}
 	else {
-		printf("\nEl contenido del archivo de prueba es \n\n");
 		while (feof(archivo) == 0) {
 			caracter = fgetc(archivo);
 			if (caracter != EOF)
@@ -139,11 +148,4 @@ void ListaOrtogonal::cargarNivelGuardado()
 	}
 	cout << "\n";
 
-}
-
-void ListaOrtogonal::cargarVec()
-{
-	for (int i = 0;i < 16;i++) {
-		cout << vec[i];
-	}
 }
