@@ -24,6 +24,21 @@ La interfaz grafica  se trabajo con la librería SFML
 Imagenes de la interfaz final del juego
 
 MENU
+
+
 [![Menu.png](https://i.postimg.cc/QCcPvkcH/Menu.png)](https://postimg.cc/H8sByMZg)
 
 
+OPCIONES 
+
+
+[![Opciones.png](https://i.postimg.cc/gc3Tzs60/Opciones.png)](https://postimg.cc/9zFp1Gb3)
+
+
+MAPAS
+
+
+[![Juego-Controls.png](https://i.postimg.cc/rsgGdDkf/Juego-Controls.png)](https://postimg.cc/0KMKF2rS)
+
+
+[![Juego-Controls2.png](https://i.postimg.cc/YCT6mc5B/Juego-Controls2.png)](https://postimg.cc/QFk9RzNf)
