@@ -20,3 +20,10 @@ la cuenta de las cajas que están en la posición final, se utiliza una pila (st
 la STL.
 
 La interfaz grafica  se trabajo con la librería SFML
+
+Imagenes de la interfaz final del juego
+
+MENU
+[![Menu.png](https://i.postimg.cc/QCcPvkcH/Menu.png)](https://postimg.cc/H8sByMZg)
+
+
