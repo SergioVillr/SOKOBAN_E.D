@@ -1,7 +1,7 @@
 # SOKOBAN_con Estructuras de Datos
 Proyecto del curso de Estructuras de Datos, Universidad Nacional
 
-El proyecto consistio en implementar el juego llamado "Sokoban". El juego consiste en un rompecabezas de longitud variable en el cuál un personaje debe arrastrar las cajas hasta el lugar correcto.
+El juego consiste en un rompecabezas de longitud variable en el cuál un personaje debe arrastrar las cajas hasta el lugar correcto.
 Una vez colocadas todas las cajas en el lugar especificado, el jugador gana y avanza hasta el siguiente nivel.
 Como regla general, el personaje solamente puede mover una caja a la vez, las cajas no pueden atravesar paredes ni otros obstáculos. 
 Se alcanza el final del nivel una vez que todas las cajas se hayan acomodado correctamente.
